@@ -1,3 +1,5 @@
+//------------DATA-----------------//
+const gallery = document.querySelector(".gallery")
 const images = [
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -12,3 +14,12 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+//------------CREATE-----------------//
+const markup = images
+.map((image) => `<li class'image-gallery'><img src="${image.url}" alt="${image.alt}" width="1260px" height="750px"></li>`)
+.join("");
+
+gallery.insertAdjacentHTML("afterbegin", markup);
+gallery.style.display = 'flex';
+gallery.style.flexDirection = 'column'
+gallery.style.listStyleType = 'none';
