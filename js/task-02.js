@@ -8,9 +8,11 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-
-//----------CREATE----------//
 const list = document.querySelector("#ingredients");
-const liElements = document.createElement("li");
-liElements.className = "item";
-list.append(ingredients);
+//----------CREATE----------//
+//zgodnie z konspektem, do pracy z tablicamy korzystam z map aby wykonać akcję z każdym z elementów// 
+const markup = ingredients
+  .map((ingredient) => `<li class="item">${ingredient}</li>`)
+  .join("");
+// w jednej operacji//
+list.innerHTML = markup;
